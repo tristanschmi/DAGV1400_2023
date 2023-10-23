@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private AudioSource blasterAudio;
+    
     public float horizontalInput;
 
     public float speed;
@@ -14,10 +16,13 @@ public class PlayerController : MonoBehaviour
 
     public GameObject Bolt;
 
+    public AudioClip blasterSound;
+
     public GameManager gameManager;
 
     void Start()
     {
+        blasterAudio = GetComponent<AudioSource>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
@@ -43,6 +48,7 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) && gameManager.isGameOver == false)
         {
             Instantiate(Bolt, Blaster.transform.position, Bolt.transform.rotation);
+            blasterAudio.PlayOneShot(blasterSound, 1.0f);
         }
         
     }
