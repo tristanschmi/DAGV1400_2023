@@ -8,13 +8,14 @@ public class TextLabelBehaviour : MonoBehaviour
 {
    public Text label;
    public FloatData dataObj;
+   
    private void Start()
    {
         label = GetComponent<Text>();
-        UpdateLabel();
+        UpdateValue();
    }
 
-   public void UpdateLabel()
+   public void UpdateValue()
    {
       label.text = dataObj.value.ToString(CultureInfo.InvariantCulture);
    }
