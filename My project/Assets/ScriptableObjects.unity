@@ -744,6 +744,7 @@ GameObject:
   - component: {fileID: 1103369555}
   - component: {fileID: 1103369554}
   - component: {fileID: 1103369559}
+  - component: {fileID: 1103369560}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -858,7 +859,7 @@ Transform:
   m_GameObject: {fileID: 1103369553}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 650, y: 278, z: 73.2}
+  m_LocalPosition: {x: 651, y: 278, z: 73.2}
   m_LocalScale: {x: 38.964294, y: 38.964294, z: 38.964294}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -894,6 +895,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1103369556}
+        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+        m_MethodName: set_material
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: f79f79e1477465d459beb744fbeec25a, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 100
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   disableEvent:
     m_PersistentCalls:
       m_Calls:
@@ -921,6 +934,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1103369560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103369553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8572f545ac3774db066bec516d8198, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1356385881
 GameObject:
   m_ObjectHideFlags: 0
