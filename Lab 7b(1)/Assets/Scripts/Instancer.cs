@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
@@ -7,7 +5,7 @@ using UnityEngine;
 public class Instancer : ScriptableObject
 {
     public GameObject prefab;
-
+    private int num;
 
     public void CreateInstance()
     {
@@ -21,9 +19,29 @@ public class Instancer : ScriptableObject
 
     public void CreateInstanceFromList(Vector3DataList obj)
     {
-        foreach (var t:Vector3Data in obj.vector3List)
+
+        for (var i = 0; i < obj.vector3List.Count; i++)
+
         {
-            Instantiate(prefab, t.value, Quaternion.identity);
+            Instantiate(prefab, obj.vector3List[i].value, Quaternion.identity);
         } 
+
+    }
+
+    public void CreateInstanceFromListCounting(Vector3DataList obj)
+    {
+        
+        Instantiate(prefab, obj.vector3List[num].value, Quaternion.identity);
+        num++;
+        if (num == obj.vector3List.Count)
+        {
+            num = 0;
+        }
+    }
+      public void CreateInstanceListRandomly(Vector3DataList obj)
+    {
+        num = Random.Range(0, obj.vector3List.Count - 1);
+        Instantiate(prefab, obj.vector3List[num].value, Quaternion.identity);
+      
     }
 }
